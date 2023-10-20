@@ -1,0 +1,122 @@
+:root {
+  --primary-500: #49a6e9;
+  --grey-100: #f1f5f9;
+  --white: #fff;
+  --red: #ee1123;
+  --red-dark: #842029;
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --fixed-width: 600px;
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+h3 {
+  font-size: 1.953rem;
+  font-weight: 600;
+}
+.btn {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--primary-500);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  letter-spacing: var(--letterSpacing);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  outline: 0;
+}
+.btn:hover {
+  transform: scale(1.15);
+}
+.modal-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--grey-100);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-modal {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 2s;
+  visibility: visible;
+  z-index: 10;
+}
+
+.modal-container {
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  width: 90vw;
+  height: 50vh;
+  max-width: var(--fixed-width);
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow-y: auto;
+  padding: 2.2rem 1.85rem;
+}
+.modal-container {
+@media(max-width: 767.98px) {
+    padding: 2rem 1.4rem;
+    height: 60vh;
+  }
+}
+p {
+  font-size: 1.14rem;
+    letter-spacing: .8px;
+    margin-top: 1.2rem;
+    line-height: 1.42;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--red);
+  cursor: pointer;
+}
